@@ -5,7 +5,12 @@
 
 ## Depenencies
 from direct.showbase.ShowBase import ShowBase
+
 from pandac.PandaModules import *
+from panda3d.core import NodePath, PandaNode
+from panda3d.physics import *
+
+
 import sys
 
 ## Project modules
@@ -56,7 +61,7 @@ class Blocks(ShowBase):
         jetpackGuy.reparentTo(render)
         an=ActorNode("jetpack-guy-physics")
         anp=Node.attachNewNode(an)
-        base.physicsMgr.attachPhysicalNode(an)
+        base.attachPhysicalNode(an)
         jetpackGuy.reparentTo(anp)
 
 
